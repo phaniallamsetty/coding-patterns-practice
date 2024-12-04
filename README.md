@@ -10,9 +10,11 @@
   - [Two Pointers](src/main/java/com/pallamsetty/twopointers)
   - [Sliding Window](src/main/java/com/pallamsetty/slidingwindow)
   - [Stack](src/main/java/com/pallamsetty/stack)
+  - [Binary Search](src/main/java/com/pallamsetty/binarysearch)
  
 - Unit tests can be found at:
   - [Arrays & Hashing](src/test/java/com/pallamsetty/arraysandhashing)
   - [Two Pointers](src/test/java/com/pallamsetty/twopointers)
   - [Sliding Window](src/test/java/com/pallamsetty/slidingwindow)
   - [Stack](src/test/java/com/pallamsetty/stack)
+  - [Binary Search](src/main/test/com/pallamsetty/binarysearch)
