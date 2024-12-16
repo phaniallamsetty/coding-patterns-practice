@@ -18,5 +18,5 @@
   - [Two Pointers](src/test/java/com/pallamsetty/twopointers)
   - [Sliding Window](src/test/java/com/pallamsetty/slidingwindow)
   - [Stack](src/test/java/com/pallamsetty/stack)
-  - [Binary Search](src/main/test/com/pallamsetty/binarysearch)
-  - [Linked List](src/main/test/com/pallamsetty/linkedlist)
+  - [Binary Search](src/test/java/com/pallamsetty/binarysearch)
+  - [Linked List](src/test/java/com/pallamsetty/linkedlist)
