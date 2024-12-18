@@ -1,5 +1,6 @@
 package com.pallamsetty.linkedlist;
 
+import com.pallamsetty.linkedlist.helpers.Assertions;
 import com.pallamsetty.linkedlist.helpers.ListNode;
 import org.junit.Test;
 
@@ -26,7 +27,7 @@ public class ReorderLinkedListTest {
         expected.next.next.next = new ListNode(6);
         ListNode actual = rll.getReorderedList();
 
-        assertLinkedLists(expected, actual);
+        Assertions.assertLinkedLists(expected, actual);
     }
 
     @Test
@@ -45,7 +46,7 @@ public class ReorderLinkedListTest {
         expected.next.next.next.next = new ListNode(6);
         ListNode actual = rll.getReorderedList();
 
-        assertLinkedLists(expected, actual);
+        Assertions.assertLinkedLists(expected, actual);
     }
 
     @Test
@@ -68,14 +69,6 @@ public class ReorderLinkedListTest {
         expected.next.next.next.next.next.next = new ListNode(8);
         ListNode actual = rll.getReorderedList();
 
-        assertLinkedLists(expected, actual);
-    }
-
-    private void assertLinkedLists(ListNode expected, ListNode actual) {
-        while(actual != null) {
-            assertEquals(expected.val, actual.val);
-            expected = expected.next;
-            actual = actual.next;
-        }
+        Assertions.assertLinkedLists(expected, actual);
     }
 }

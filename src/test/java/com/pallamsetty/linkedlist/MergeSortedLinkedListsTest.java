@@ -1,5 +1,6 @@
 package com.pallamsetty.linkedlist;
 
+import com.pallamsetty.linkedlist.helpers.Assertions;
 import com.pallamsetty.linkedlist.helpers.ListNode;
 import org.junit.Test;
 
@@ -51,11 +52,7 @@ public class MergeSortedLinkedListsTest {
 
         ListNode actual = msll.mergeTwoLists(list1, list2);
 
-        while(actual != null) {
-            assertEquals(expected.val, actual.val);
-            expected = expected.next;
-            actual = actual.next;
-        }
+        Assertions.assertLinkedLists(expected, actual);
     }
 
     @Test
@@ -77,10 +74,6 @@ public class MergeSortedLinkedListsTest {
 
         ListNode actual = msll.mergeTwoLists(list1, list2);
 
-        while(actual != null) {
-            assertEquals(expected.val, actual.val);
-            expected = expected.next;
-            actual = actual.next;
-        }
+        Assertions.assertLinkedLists(expected, actual);
     }
 }
