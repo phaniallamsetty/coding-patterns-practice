@@ -45,7 +45,7 @@ public class ReverseLinkedListTest {
         ListNode head = new ListNode();
         ListNode reversed = rll.reverseList(head);
         assertNotNull(reversed);
-        assertEquals(0, reversed.val);
+        assertEquals(Integer.MIN_VALUE, reversed.val);
         assertNull(reversed.next);
     }
 }
