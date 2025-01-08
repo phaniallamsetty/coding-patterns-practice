@@ -12,6 +12,7 @@
   - [Stack](src/main/java/com/pallamsetty/stack)
   - [Binary Search](src/main/java/com/pallamsetty/binarysearch)
   - [Linked List](src/main/java/com/pallamsetty/linkedlist)
+  - [Trees](src/main/java/com/pallamsetty/trees)
  
 - Unit tests can be found at:
   - [Arrays & Hashing](src/test/java/com/pallamsetty/arraysandhashing)
@@ -20,3 +21,4 @@
   - [Stack](src/test/java/com/pallamsetty/stack)
   - [Binary Search](src/test/java/com/pallamsetty/binarysearch)
   - [Linked List](src/test/java/com/pallamsetty/linkedlist)
+  - [Trees](src/test/java/com/pallamsetty/trees)
