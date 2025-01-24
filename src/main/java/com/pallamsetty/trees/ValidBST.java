@@ -6,21 +6,35 @@ package com.pallamsetty.trees;
 
 import com.pallamsetty.trees.helpers.TreeNode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ValidBST {
     public boolean isValidBST(TreeNode root){
-        return isValidBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        List<Integer> inorderList = new ArrayList<>();
+
+        boolean isBST = true;
+        inorderTraversal(root, inorderList);
+        int prev = inorderList.get(0);
+
+        for(int i = 1; i < inorderList.size(); i++) {
+            if(inorderList.get(i) <= prev) {
+                return false;
+            }
+
+            prev = inorderList.get(i);
+        }
+
+        return true;
     }
 
-    private boolean isValidBST(TreeNode root, long left, long right) {
+    private void inorderTraversal(TreeNode root, List<Integer> inorderList) {
         if(root == null) {
-            return true;
+            return;
         }
 
-        if(!(left < root.val && right > root.val)) {
-            return false;
-        }
-
-        return isValidBST(root.left, left, root.val)
-                && isValidBST(root.right, root.val, right);
+        inorderTraversal(root.left, inorderList);
+        inorderList.add(root.val);
+        inorderTraversal(root.right, inorderList);
     }
 }

@@ -41,4 +41,11 @@ public class ValidBSTTest {
 
         assertFalse(vb.isValidBST(root));
     }
+
+    @Test
+    public void testIsValidBST4() {
+        TreeNode root = new TreeNode(2147483647);
+
+        assertTrue(vb.isValidBST(root));
+    }
 }
