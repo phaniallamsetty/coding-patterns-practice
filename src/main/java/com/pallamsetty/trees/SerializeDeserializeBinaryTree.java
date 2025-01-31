@@ -6,45 +6,42 @@ package com.pallamsetty.trees;
 
 import com.pallamsetty.trees.helpers.TreeNode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SerializeDeserializeBinaryTree {
-    private static int index;
     public String serialize(TreeNode root) {
-        StringBuilder sb = new StringBuilder();
-        serializeDfs(root, sb);
-        if(sb.length() > 0) {
-            sb.deleteCharAt(sb.length() - 1);
-        }
-        return sb.toString();
+        List<String> res = new ArrayList<>();
+        dfsSerialize(root, res);
+        return String.join(",", res);
     }
 
-    public TreeNode deserialize(String data) {
-        String[] dataArr = data.split(",");
-        return processArray(dataArr);
-    }
-
-    private void serializeDfs(TreeNode root, StringBuilder sb) {
-        if(root == null) {
-            sb.append("N");
-            sb.append(",");
+    private void dfsSerialize(TreeNode node, List<String> res) {
+        if (node == null) {
+            res.add("N");
             return;
         }
-
-        sb.append(root.val);
-        sb.append(",");
-        serializeDfs(root.left, sb);
-        serializeDfs(root.right, sb);
+        res.add(String.valueOf(node.val));
+        dfsSerialize(node.left, res);
+        dfsSerialize(node.right, res);
     }
 
-    private TreeNode processArray(String[] dataArr) {
-        if(index >= dataArr.length || dataArr[index].equals("N")) {
-            index++;
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        String[] vals = data.split(",");
+        int[] i = {0};
+        return dfsDeserialize(vals, i);
+    }
+
+    private TreeNode dfsDeserialize(String[] vals, int[] i) {
+        if (vals[i[0]].equals("N")) {
+            i[0]++;
             return null;
         }
-
-        TreeNode root = new TreeNode(Integer.parseInt(dataArr[index++]));
-        root.left = processArray(dataArr);
-        root.right = processArray(dataArr);
-
-        return root;
+        TreeNode node = new TreeNode(Integer.parseInt(vals[i[0]]));
+        i[0]++;
+        node.left = dfsDeserialize(vals, i);
+        node.right = dfsDeserialize(vals, i);
+        return node;
     }
 }
