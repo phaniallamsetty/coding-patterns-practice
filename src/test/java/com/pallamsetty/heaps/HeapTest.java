@@ -2,9 +2,9 @@ package com.pallamsetty.heaps;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -92,5 +92,31 @@ public class HeapTest {
         assertEquals(16, (int) h.heap.get(1));
         assertEquals(19, (int) h.heap.get(3));
         assertEquals(30, (int) h.heap.get(6));
+    }
+
+    @Test
+    public void testHeapImpl5() {
+        int[] arr = {60, 50, 80, 40, 30, 10, 70, 20, 90};
+        ArrayList arrList = new ArrayList();
+
+        for(int num: arr) {
+            arrList.add(num);
+        }
+
+        h.heapify(arrList);
+
+        List<Integer> expected = new ArrayList<>();
+        expected.add(60);
+        expected.add(10);
+        expected.add(30);
+        expected.add(20);
+        expected.add(50);
+        expected.add(80);
+        expected.add(70);
+        expected.add(40);
+        expected.add(90);
+        expected.add(60);
+
+        assertArrayEquals(expected.toArray(), h.heap.toArray());
     }
 }
